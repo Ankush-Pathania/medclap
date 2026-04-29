@@ -13,6 +13,7 @@ import {
   CheckCircle2,
   Coffee,
   Sparkles,
+  YoutubeIcon,
 } from "lucide-react";
 import Container from "@/components/ui/Container";
 
@@ -28,17 +29,17 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-const resourceLinks = [
-  { label: "Case Studies", href: "#work" },
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms of Service", href: "/terms" },
-  { label: "Sitemap", href: "/sitemap" },
-];
+// const resourceLinks = [
+//   { label: "Case Studies", href: "#work" },
+//   { label: "Privacy Policy", href: "/privacy" },
+//   { label: "Terms of Service", href: "/terms" },
+//   { label: "Sitemap", href: "/sitemap" },
+// ];
 
 const socialLinks = [
-  { label: "LinkedIn", href: "#", Icon: Linkedin },
-  { label: "Twitter / X", href: "#", Icon: Twitter },
-  { label: "Instagram", href: "#", Icon: Instagram },
+ { label: "LinkedIn", href: "https://www.linkedin.com/company/medclap", Icon: Linkedin },
+  { label: "YouTube / X", href: "https://www.youtube.com/@MedClap", Icon: YoutubeIcon },
+  { label: "Instagram", href: "https://www.instagram.com/lifeatmedclap", Icon: Instagram },
 ];
 
 /* ============================================================
@@ -226,7 +227,7 @@ export default function Footer() {
             {/* Link columns */}
             <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-6 md:gap-8">
               <FooterColumn label="// Navigate //" links={navLinks} />
-              <FooterColumn label="// Resources //" links={resourceLinks} />
+              {/* <FooterColumn label="// Resources //" links={resourceLinks} /> */}
 
               <div>
               <h3 className="text-[10px] font-bold text-cream/40 uppercase tracking-[0.2em] mb-5">

@@ -12,6 +12,7 @@ import {
   Linkedin,
   Twitter,
   Instagram,
+  Youtube,
 } from "lucide-react";
 import Container from "@/components/ui/Container";
 
@@ -28,9 +29,9 @@ const menuItems = [
 ];
 
 const socials = [
-  { Icon: Linkedin, href: "#", label: "LinkedIn" },
-  { Icon: Twitter, href: "#", label: "Twitter" },
-  { Icon: Instagram, href: "#", label: "Instagram" },
+  { Icon: Linkedin, href: "https://www.linkedin.com/company/medclap", label: "LinkedIn" },
+  { Icon: Youtube, href: "https://www.youtube.com/@MedClap", label: "Youtube" },
+  { Icon: Instagram, href: "https://www.instagram.com/lifeatmedclap", label: "Instagram" },
 ];
 
 /* ============================================================

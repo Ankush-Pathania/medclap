@@ -75,15 +75,15 @@ const projects: Project[] = [
   badge: "Automotive",
   badgeAccent: "cream",
 },
-  {
-    name: "Fast ESA Letter",
-    category: "Healthtech · 2025",
-    description: "Streamlined the application funnel and rebuilt paid acquisition.",
-    href: "#fast-esa",
-    image: "/images/fast-esa.jpeg",
-    badge: "Fast ESA Letter ✓",
-    badgeAccent: "cream",
-  },
+  // {
+  //   name: "Fast ESA Letter",
+  //   category: "Healthtech · 2025",
+  //   description: "Streamlined the application funnel and rebuilt paid acquisition.",
+  //   href: "#fast-esa",
+  //   image: "/images/fast-esa.jpeg",
+  //   badge: "Fast ESA Letter ✓",
+  //   badgeAccent: "cream",
+  // },
 ];
 
 /* ============================================================
@@ -170,7 +170,7 @@ export default function Work() {
         </div>
 
         {/* ════════ "VIEW ALL" LINK ════════ */}
-        <div className="mt-16 md:mt-24 flex justify-center">
+        {/* <div className="mt-16 md:mt-24 flex justify-center">
           <a
             href="#"
             className="group inline-flex items-center gap-3 text-sm font-bold text-navy uppercase tracking-[0.2em] hover:gap-5 transition-all duration-300"
@@ -182,7 +182,7 @@ export default function Work() {
               strokeWidth={2.5}
             />
           </a>
-        </div>
+        </div> */}
       </Container>
     </section>
   );

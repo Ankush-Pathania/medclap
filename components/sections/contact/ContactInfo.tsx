@@ -79,7 +79,7 @@ export default function ContactInfo() {
           </div>
           <div className="min-w-0">
             <div className="font-display text-[15px] font-extrabold text-navy leading-tight">
-              Prince Sharma
+              Deep Sharma
             </div>
             <div className="text-[12px] text-ink-soft mt-0.5">
               Founder · Your message goes straight to me.
@@ -97,10 +97,10 @@ export default function ContactInfo() {
           value="deep@medclap.com"
         />
         <ContactLink
-          href="tel:+919996619432"
+          href="tel:+1 (201) 632-5548"
           icon={<Phone className="w-5 h-5 text-gold" strokeWidth={2.25} />}
           label="Call"
-          value="+91 8295515447"
+          value="+1 (201) 632-5548"
         />
         <ContactLink
           href="#"

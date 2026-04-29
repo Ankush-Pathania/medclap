@@ -22,33 +22,33 @@ const testimonials: Testimonial[] = [
   {
     rating: 4.9,
     quote:
-      "Proactive, precise, and easy to work with — no hand-holding needed, just smooth execution from kickoff to launch.",
-    name: "Sarah Chen",
+      "MedClap rebuilt our funnel from the ground up — better landing pages, tighter ad copy, and SEO that actually ranks. Our qualified leads jumped within the first quarter and cost-per-acquisition kept dropping. They get the ESA space.",
+    name: "Tracy Deslaurier",
     role: "VP Marketing · Fast ESA Letter",
     avatar: { bg: "#F4B62E", color: "#1A2A5E", initials: "SC" },
   },
   {
     rating: 5.0,
     quote:
-      "Felt like an embedded team with zero friction. Reports are clear, recommendations sharp, and the work moves the needle.",
-    name: "Maya Collins",
-    role: "Head of Growth · Stackwise",
+"Operating across 17 states means 17 different SEO battles. MedClap mapped out state-level strategies that stuck — organic traffic is up double digits YoY and our top states are converting better than ever. Reporting is sharp and the team just executes.",
+    name: "Dr. Marcus Riley",
+    role: "Head of Growth · My MMJ Doctor",
     avatar: { bg: "#1A2A5E", color: "#F4B62E", initials: "MC" },
   },
   {
     rating: 4.9,
     quote:
-      "We came in skeptical. Three months later, our paid acquisition is delivering 4× the leads at half the cost. They earned it.",
-    name: "Jesse Leigh",
-    role: "CEO · Bloom & Co",
+"We're a B2B equipment business — not exactly glamorous SEO territory. MedClap dug into our product catalog, fixed years of technical debt on the site, and built a content engine that actually pulls in buyers. Inbound inquiries have never been this consistent.",
+    name: "Ravi Sharma",
+    role: "OPERATIONS DIRECTOR · SRB EQUIPMENT",
     avatar: { bg: "#D89A14", color: "#FAF6EE", initials: "JL" },
   },
   {
     rating: 4.9,
     quote:
-      "We tried four agencies before MedClap. This team gets it — strategy first, then craft. Wish we'd found them sooner.",
-    name: "Benjamin Daul",
-    role: "Director of Brand · Vertex Capital",
+"Booking inquiries used to be seasonal and unpredictable. MedClap turned our paid search and local SEO into a steady pipeline — we're now ranking for the routes that matter and our quote requests have more than doubled. They treated our business like their own.",
+    name: "Daniel Whitmore",
+    role: "FOUNDER · GO COACH CHARTERS",
     avatar: { bg: "#2B3D7A", color: "#F4B62E", initials: "BD" },
   },
 ];
@@ -240,10 +240,10 @@ export default function Reviews() {
 
               {/* Leave a review button */}
               <a
-                href="#"
+                href="#contact"
                 className="group inline-flex items-center justify-between gap-3 w-full bg-cream text-navy rounded-full pl-5 pr-3 py-3 hover:bg-gold transition-colors duration-300"
               >
-                <span className="font-bold text-[14px]">Leave a review</span>
+                <span className="font-bold text-[14px]">Get a FREE Audit</span>
                 <span className="w-8 h-8 rounded-full bg-navy flex items-center justify-center transition-transform duration-300 group-hover:rotate-[-12deg]">
                   <ArrowUpRight
                     className="w-3.5 h-3.5 text-gold"

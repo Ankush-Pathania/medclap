@@ -15,7 +15,7 @@ export default function Home() {
       <Header />
       <main className="min-h-screen">
         <Hero />
-        <WorkedWith />
+        {/* <WorkedWith /> */}
         <Services />
         <Work />
         <Reviews />

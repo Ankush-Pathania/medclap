@@ -503,7 +503,7 @@ export default function Services() {
             return (
               <a
                 key={service.title}
-                href="#"
+                href="#contact"
                 className="service-card group block"
               >
                 {/* TEXT CARD */}
