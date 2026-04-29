@@ -156,7 +156,7 @@ export default function Hero() {
               <span className="overflow-hidden inline-block">
                 <span className="hero-word inline-block">That</span>
               </span>
-              <span className="overflow-hidden inline-block">
+              <span className=" inline-block">
                 <span className="hero-word inline-block font-serif italic font-normal text-gold-deep lowercase tracking-normal">
                   actually
                 </span>
