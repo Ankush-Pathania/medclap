@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLenis } from "lenis/react";
 import {
@@ -112,7 +113,7 @@ export default function Header() {
         <Container>
           <div className="flex items-center justify-between py-5 md:py-6">
             {/* Logo */}
-            <a
+            <Link
               href="/"
               onClick={handleLogoClick}
               className={`flex items-center gap-2.5 transition-colors duration-500 ${
@@ -139,7 +140,7 @@ export default function Header() {
               <span className="font-display text-xl font-extrabold tracking-tight">
                 MedClap
               </span>
-            </a>
+            </Link>
 
             {/* Menu / Close Button */}
             <button
