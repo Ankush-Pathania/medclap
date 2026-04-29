@@ -121,8 +121,8 @@ export default function Header() {
               }`}
               aria-label="MedClap home"
             >
-            <img width={80}
-    height={40}
+            <img width={56}
+    height={56}
      src="./images/main-logo.png" alt="" />
             </Link>
 

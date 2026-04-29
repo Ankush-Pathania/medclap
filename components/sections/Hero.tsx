@@ -100,7 +100,7 @@ export default function Hero() {
     <section
   ref={heroRef}
   id="home"
-  className="relative min-h-screen pt-20 md:pt-28 overflow-hidden bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(244,182,46,0.2),transparent_65%),radial-gradient(circle_at_85%_40%,rgba(244,182,46,0.12),transparent_50%),linear-gradient(to_bottom,#FAF6EE,#FAF6EE)]"
+  className="relative min-h-screen pt-28 md:pt-32 overflow-hidden bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(244,182,46,0.2),transparent_65%),radial-gradient(circle_at_85%_40%,rgba(244,182,46,0.12),transparent_50%),linear-gradient(to_bottom,#FAF6EE,#FAF6EE)]"
 >
       <Container>
         {/* ════════════════════════════════════════════
