@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import {
   Mail,
@@ -14,8 +15,9 @@ import Container from "@/components/ui/Container";
 
 /* ============================================================
    OWNERS DATA
-   To swap in real photos later, just add `photo: "/team/deep.jpg"`
-   to the relevant owner. The component handles it automatically.
+   To use real photos: drop them in /public/team/ and set the
+   `photo` field to the path. Leave it blank to fall back to
+   the monogram placeholder.
    ============================================================ */
 
 type Owner = {
@@ -41,6 +43,7 @@ const owners: Owner[] = [
     email: "deep@medclap.com",
     linkedin: "#",
     bio: "Deep leads the strategy and growth side of MedClap. With over a decade in performance marketing across healthcare and wellness, he's built campaigns that scaled brands from launch to category leaders. He believes the best marketing feels less like marketing — and more like solving real problems for real people.",
+    photo: "/images/deep.jpeg", 
     accentBg: "bg-navy",
   },
   {
@@ -52,6 +55,7 @@ const owners: Owner[] = [
     email: "gaurav@medclap.com",
     linkedin: "#",
     bio: "Gaurav runs the creative and design practice. He approaches every brand as a system, not a logo — building visual identities, websites, and campaigns that don't just look good, but earn their keep. His work has shipped for 100+ brands across healthcare, B2B SaaS, and consumer wellness.",
+    photo: "/images/gaurav.jpg", // ← drop gaurav.jpg into /public/team/
     accentBg: "bg-cream-warm",
   },
 ];
@@ -149,7 +153,7 @@ export default function Founders() {
             >
               Meet the{" "}
               <span className="font-serif italic font-normal text-gold-deep">
-                team.
+                Founders.
               </span>
             </motion.h2>
           </div>
@@ -300,20 +304,15 @@ export default function Founders() {
                     }`}
                   />
 
-                  <div className="absolute inset-0 flex items-center justify-center p-8">
+                  <div className="absolute inset-0 flex items-center justify-center p-6 md:p-8">
                     {active.photo ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={active.photo}
-                        alt={active.name}
-                        className="w-full h-full object-cover rounded-2xl"
-                      />
+                      <PhotoPortrait owner={active} />
                     ) : (
                       <MonogramPortrait owner={active} />
                     )}
                   </div>
 
-                  <div className="absolute top-5 left-5 inline-flex items-center gap-1.5 bg-cream/15 backdrop-blur-sm rounded-full px-2.5 py-1 border border-cream/15">
+                  <div className="absolute top-5 left-5 inline-flex items-center gap-1.5 bg-cream/15 backdrop-blur-sm rounded-full px-2.5 py-1 border border-cream/15 z-10">
                     <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
                     <span
                       className={`text-[10px] font-bold uppercase tracking-widest ${
@@ -356,13 +355,23 @@ export default function Founders() {
                   }`}
                 >
                   <span
-                    className={`w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center font-display font-extrabold text-[12px] md:text-[13px] flex-shrink-0 transition-colors duration-300 ${
+                    className={`w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center font-display font-extrabold text-[12px] md:text-[13px] flex-shrink-0 transition-colors duration-300 overflow-hidden ${
                       i === activeIndex
                         ? "bg-gold text-navy"
                         : "bg-navy text-gold"
                     }`}
                   >
-                    {owner.initials}
+                    {owner.photo ? (
+                      <Image
+                        src={owner.photo}
+                        alt={owner.name}
+                        width={40}
+                        height={40}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      owner.initials
+                    )}
                   </span>
                   <div className="hidden sm:block text-left">
                     <div
@@ -464,6 +473,55 @@ export default function Founders() {
     </section>
   );
 }
+
+/* ============================================================
+   PHOTO PORTRAIT — used when owner.photo is set
+   ============================================================ */
+
+function PhotoPortrait({ owner }: { owner: Owner }) {
+  const isOnNavy = owner.accentBg === "bg-navy";
+  return (
+    <div className="relative w-full max-w-[320px] aspect-[3/4]">
+      {/* Decorative outer frame */}
+      <div
+        className={`absolute inset-0 rounded-3xl border-2 ${
+          isOnNavy ? "border-cream/15" : "border-navy/10"
+        }`}
+      />
+
+      {/* Photo container */}
+      <div className="absolute inset-3 rounded-2xl overflow-hidden">
+        <Image
+          src={owner.photo!}
+          alt={owner.name}
+          fill
+          sizes="(max-width: 768px) 80vw, (max-width: 1024px) 40vw, 320px"
+          className="object-cover"
+          priority
+        />
+
+        {/* Gradient name overlay at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 px-4 pt-12 pb-3 bg-gradient-to-t from-black/75 via-black/40 to-transparent">
+          <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-cream/75">
+            {owner.role.split("&")[0].trim()}
+          </div>
+          <div className="font-display font-extrabold text-[15px] mt-0.5 text-cream">
+            {owner.name}
+          </div>
+        </div>
+      </div>
+
+      {/* Corner gold star */}
+      <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-gold flex items-center justify-center text-navy font-display font-extrabold text-[11px] shadow-lg z-10">
+        ✦
+      </span>
+    </div>
+  );
+}
+
+/* ============================================================
+   MONOGRAM PORTRAIT — fallback when no photo is set
+   ============================================================ */
 
 function MonogramPortrait({ owner }: { owner: Owner }) {
   const isOnNavy = owner.accentBg === "bg-navy";
