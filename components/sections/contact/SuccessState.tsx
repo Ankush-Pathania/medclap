@@ -39,7 +39,7 @@ export default function SuccessState({ firstName, onReset }: Props) {
         <span className="font-serif italic font-normal text-gold">sent.</span>
       </h3>
       <p className="text-cream/70 text-sm md:text-base max-w-md mx-auto leading-relaxed mb-8">
-        Thanks {firstName || "for reaching out"}! Ankush will personally reply
+        Thanks {firstName || "for reaching out"}! We will personally reply
         within 24 hours — usually much sooner.
       </p>
       <button

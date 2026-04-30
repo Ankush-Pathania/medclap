@@ -124,6 +124,7 @@ export default function ContactForm() {
         <AnimatePresence mode="wait">
           {submitted ? (
             <SuccessState
+              key="success"
               firstName={formData.name.trim().split(" ")[0]}
               onReset={resetForm}
             />
